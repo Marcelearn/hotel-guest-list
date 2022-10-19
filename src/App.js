@@ -5,7 +5,7 @@ import Room from './components/Room'
 function App() {
   const sortedRooms = Rooms.sort((a, b)=> a.roomNo - b.roomNo);
   const roomsComponents = sortedRooms.map((item, index) => {
-    return <Room item={item} index={index} />
+    return <Room item={item} key={index} />
   })
   return (
     <div className="App">
