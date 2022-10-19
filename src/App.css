@@ -11,6 +11,9 @@
 }
 .room {
   margin-left: 3rem;
+  padding: 2rem;
+  background-color: rgb(30, 30, 30);
+  gap: 1rem;
 }
 
 h1 {
