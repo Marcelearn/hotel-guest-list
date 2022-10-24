@@ -3,8 +3,8 @@ import Rooms from './Data.json'
 import Room from './components/Room'
 import SortedRooms from './components/Sort';
 
+
 function App() {
-  // const sortedRooms = Rooms.sort((a, b)=> a.roomNo - b.roomNo);
   const roomsComponents = SortedRooms.map((item, index) => {
     return <Room item={item} key={index} />
   })
