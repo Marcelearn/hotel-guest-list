@@ -19,7 +19,7 @@ function Form() {
         
     }
       return (
-        <div onSubmit={handelSubmit} className="Form">
+        <form onSubmit={handelSubmit} className="Form">
           <header className="Form-header">
             <h2>New Guest</h2>
             <br/>
@@ -32,7 +32,7 @@ function Form() {
             <br/>
             <button >Submit</button>
           </header>
-        </div>
+        </form>
       );
     
     
