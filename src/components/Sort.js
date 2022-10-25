@@ -1,3 +1,5 @@
-import Rooms from '../Data.json';
-const SortedRooms = Rooms.sort((a, b)=> a.roomNo - b.roomNo);
+
+function SortedRooms (arr) {
+    return arr.sort((a, b)=> a.roomNo - b.roomNo);
+}
 export default SortedRooms;
