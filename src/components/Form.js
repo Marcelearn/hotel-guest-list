@@ -2,22 +2,31 @@ import { useState } from "react";
 
 function Form() {
     const [values, setValues] = useState({
-        name: "name",
-        email: "email"
+        firstName: "name",
+        secondName: "lastname"
     })
     const handleInput = (event) => {
         setValues({
           ...values,
           [event.target.name]: event.target.value,
         });
-      };
+    };
+    function handelSubmit (){
+        console.log(values)
+    }
       return (
         <div className="Form">
           <header className="Form-header">
-            <h1>Forms</h1>
-            <input type="text" placeholder="Name" onChange={handleInput} value={values.name} name="name" />
-            <input type="text" placeholder="E-Mail-Adresse" onChange={handleInput} value={values.email} name="email" />
-            <p>{values.name}, Deine E-Mail-Adresse lautet {values.email}</p>
+            <h2>New Guest</h2>
+            <br/>
+            <input type="text" placeholder="First name" onChange={handleInput} value={values.firstName} name="firstName" />
+            <input type="text" placeholder="Secod name" onChange={handleInput} value={values.secondName} name="secondName" />
+            <input type="date" placeholder="check In" onChange={handleInput} value={values.checkIn} name="checkIn" />
+            <input type="date" placeholder="check Out" onChange={handleInput} value={values.checkOut} name="checkOut" />
+            <br/>
+            {/* <p>{values.firstName}, Deine E-Mail-Adresse lautet {values.secondName}</p> */}
+            <br/>
+            <button type="submit" onClick={handelSubmit}>Submit</button>
           </header>
         </div>
       );

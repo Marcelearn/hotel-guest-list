@@ -21,7 +21,7 @@ function Room({item}){
     const handlerOnclick = () =>{
         
         setcheckIn(!checkedIn)
-        setArr((current)=>[...current , item.checkedIn= checkedIn])
+        // setArr((current)=>[...current , item.checkedIn= checkedIn])
     
         console.log("handlerOnclick")
     }
