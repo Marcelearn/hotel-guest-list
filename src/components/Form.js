@@ -11,11 +11,15 @@ function Form() {
           [event.target.name]: event.target.value,
         });
     };
-    function handelSubmit (){
+    const handelSubmit = (e)=>{
+        e.preventDefault()
         console.log(values)
+        // handleInput(name:"", ....)
+        
+        
     }
       return (
-        <div className="Form">
+        <div onSubmit={handelSubmit} className="Form">
           <header className="Form-header">
             <h2>New Guest</h2>
             <br/>
@@ -26,7 +30,7 @@ function Form() {
             <br/>
             {/* <p>{values.firstName}, Deine E-Mail-Adresse lautet {values.secondName}</p> */}
             <br/>
-            <button type="submit" onClick={handelSubmit}>Submit</button>
+            <button >Submit</button>
           </header>
         </div>
       );
