@@ -27,11 +27,11 @@ function Room({item}){
     
         console.log("handlerOnclick")
     }
-    // useEffect (() =>{
-    //     if(checkedIn){
-    //         alert(`Zimmer Nr. ${item.roomNo} ist nun belegt.`)
-    //     }
-    // },[checkedIn])
+    useEffect (() =>{
+        if(checkedIn){
+            return alert(`Zimmer Nr. ${item.roomNo} ist nun belegt.`)
+        }
+    },[checkedIn])
     return (
 
         <div className="room">
