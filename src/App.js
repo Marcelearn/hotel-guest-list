@@ -9,7 +9,6 @@ function App() {
   const roomsComponents = Rooms.map((item, index) => {
     return <Room item={item} key={index} />
   })  
-
   
   
   return (

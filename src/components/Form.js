@@ -1,9 +1,12 @@
 import { useState } from "react";
+import './Form.css'
 
 function Form() {
     const [values, setValues] = useState({
         firstName: "name",
-        secondName: "lastname"
+        secondName: "lastname",
+        checkIn: "",
+        checkOut: ""
     })
     const handleInput = (event) => {
         setValues({
@@ -14,7 +17,7 @@ function Form() {
     const handelSubmit = (e)=>{
         e.preventDefault()
         console.log(values)
-        // handleInput(name:"", ....)
+        // handleInput(fistName:"name", secondName: "lastname" )
         
         
     }

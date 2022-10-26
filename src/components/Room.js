@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import Reverse from "./Reverse";
 import Rooms from "../Data.json";
 import SortedRooms from '../components/Sort';
+
+
 function Room({item}){ 
     console.log(item)
     const [arr, setArr ] = useState([])
