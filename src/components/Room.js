@@ -1,37 +1,32 @@
 import { useState, useEffect } from "react";
 import Reverse from "./Reverse";
-import Rooms from "../Data.json";
-import SortedRooms from '../components/Sort';
 
 
-function Room({item}){ 
+
+
+function Room({item, updateData}){ 
     console.log(item)
-    const [arr, setArr ] = useState([])
     const [checkedIn, setcheckIn] = useState(false)
-    useEffect(()=> {
-      console.log("aus Ls laden")
-     setArr(JSON.parse(localStorage.getItem("rooms")) || SortedRooms(Rooms));
-     // addStorage(roomsComponents)
-    },[])
-    useEffect(()=>{
-      localStorage.setItem("rooms", JSON.stringify(arr))
+    // useEffect(()=> {
+    //   console.log("aus Ls laden")
+    //  setArr(JSON.parse(localStorage.getItem("rooms")) || SortedRooms(Rooms));
+    //  // addStorage(roomsComponents)
+    // },[])
+    // useEffect(()=>{
+    //   localStorage.setItem("rooms", JSON.stringify(arr))
   
-    },[arr])
+    // },[arr])
     
-   
-  
+
     const handlerOnclick = () =>{
-        
         setcheckIn(!checkedIn)
-        // setArr((current)=>[...current , item.checkedIn= checkedIn])
-    
         console.log("handlerOnclick")
     }
-    useEffect (() =>{
-        if(checkedIn){
-            return alert(`Zimmer Nr. ${item.roomNo} ist nun belegt.`)
-        }
-    },[checkedIn])
+    // useEffect (() =>{
+    //     if(checkedIn){
+    //         return alert(`Zimmer Nr. ${item.roomNo} ist nun belegt.`)
+    //     }
+    // },[checkedIn])
     return (
 
         <div className="room">
@@ -42,7 +37,7 @@ function Room({item}){
             <p className="room__guest__checkin" >checkIn: {Reverse(item.checkIn)}</p>
             <p className="room__guest__checkout">checkOut: {Reverse(item.checkOut)}</p>
             <br/>
-            <button onClick={handlerOnclick}>{checkedIn? "Check In": "Check Out"}</button>
+            <button onClick={()=>updateData(item)}>{item.checkedIn? "Check In": "Check Out"}</button>{/* Ruft die Funktion updateData aus App.js auf und übergibt aktuelles item  */}
             
         </div>
 
